@@ -604,6 +604,31 @@
   .why-item h4{font-size:0.95rem; margin-bottom:6px;}
   .why-item p{color:var(--ink-dim); font-size:0.78rem; line-height:1.6;}
 
+  /* ---------- Custom order box ---------- */
+  #catalog{padding-bottom:30px;}
+  .custom-order{padding-top:24px !important;}
+  .custom-order .section-head{margin-bottom:22px;}
+  .co-box{
+    max-width:600px; margin:0 auto; background:var(--card); border:1px solid var(--card-border);
+    border-radius:22px; padding:20px;
+  }
+  .co-row{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:10px;}
+  .co-box label{display:block; font-size:0.78rem; color:var(--ink-dim);}
+  .co-optional{font-size:0.68rem; opacity:0.7;}
+  .co-box input, .co-box select, .co-box textarea{
+    display:block; width:100%; margin-top:5px; padding:8px 9px;
+    border-radius:10px; border:1.5px solid var(--card-border); background:var(--bg-night);
+    color:var(--ink); font-family:inherit; font-size:0.8rem;
+  }
+  @media (max-width:380px){
+    .co-box input, .co-box select{font-size:0.72rem; padding:7px 8px;}
+    .co-box label{font-size:0.72rem;}
+  }
+  .co-box input:focus, .co-box select:focus, .co-box textarea:focus{outline:none; border-color:var(--gold);}
+  .co-box textarea{resize:vertical;}
+  .co-full{display:block; margin-bottom:18px;}
+  #coSubmitBtn{width:100%;}
+
   /* ---------- Contact ---------- */
   .contact{text-align:center;}
   .contact-card{
@@ -812,6 +837,18 @@
     outline:1.5px solid var(--gold);
   }
 
+  /* color / design picker for products with many options */
+  .variant-select-label{
+    display:block; font-size:0.76rem; color:var(--ink-dim); margin:2px 0 8px;
+  }
+  .variant-select{
+    display:block; width:100%; margin-top:4px; padding:6px 10px;
+    border-radius:10px; border:1.5px solid var(--card-border); background:var(--card);
+    color:var(--ink); font-family:inherit; font-size:0.8rem; cursor:pointer;
+    height:34px;
+  }
+  .variant-select:focus{outline:none; border-color:var(--gold);}
+
   @media (max-width:640px){
     .navlinks{display:none;}
     section{padding:64px 4%;}
@@ -1005,7 +1042,7 @@
           <div class="cat">دستبند صدفی · دونه‌ای یا ست کاپلی</div>
           <div class="price-list">
             <div class="price-row"><span>دونه‌ای</span><span class="price">۹۰٬۰۰۰ ت</span></div>
-            <div class="price-row highlight"><span>ست کامل</span><span class="price">۱۷۰٬۰۰۰ ت</span></div>
+            <div class="price-row highlight"><span>ست دستبند</span><span class="price">۱۷۰٬۰۰۰ ت</span></div>
           </div>
           <button type="button" class="order-btn add-to-cart-btn">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6h15l-1.5 9h-12z"/><path d="M6 6 5 3H2"/><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/></svg>
@@ -1161,7 +1198,7 @@
           <div class="price-list">
             <div class="price-row"><span>گردنبند ساده</span><span class="price">۱۵۰٬۰۰۰ ت</span></div>
             <div class="price-row"><span>گردنبند پلاک‌دار</span><span class="price">۱۹۰٬۰۰۰ ت</span></div>
-            <div class="price-row highlight"><span>ست کامل (هر دو)</span><span class="price">۳۴۰٬۰۰۰ ت</span></div>
+            <div class="price-row highlight"><span>ست کامل</span><span class="price">۳۴۰٬۰۰۰ ت</span></div>
           </div>
           <button type="button" class="order-btn add-to-cart-btn">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6h15l-1.5 9h-12z"/><path d="M6 6 5 3H2"/><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/></svg>
@@ -1243,8 +1280,15 @@
           <h3>گردنبند زنجیری پلاک‌دار 🦋</h3>
           <div class="cat">زنجیر استیل · طرح‌های پاپیون، لیمو و فلفل · استایلت رو خاص کن</div>
           <div class="price-list">
-            <div class="price-row highlight"><span>قیمت</span><span class="price">۱۵۰٬۰۰۰ ت</span></div>
+            <div class="price-row highlight"><span>گردنبند</span><span class="price">۱۵۰٬۰۰۰ ت</span></div>
           </div>
+          <label class="variant-select-label">طرح دلخواه
+            <select class="variant-select">
+              <option>پاپیون</option>
+              <option>لیمو</option>
+              <option>فلفل</option>
+            </select>
+          </label>
           <button type="button" class="order-btn add-to-cart-btn">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6h15l-1.5 9h-12z"/><path d="M6 6 5 3H2"/><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/></svg>
             افزودن به سبد خرید
@@ -1298,8 +1342,21 @@
           <h3>دستبند صدفی 🐚</h3>
           <div class="cat">مناسب استایل‌های خاص شما 🙂🌱</div>
           <div class="price-list">
-            <div class="price-row highlight"><span>تک دستبند</span><span class="price">۱۰۰٬۰۰۰ ت</span></div>
+            <div class="price-row highlight"><span>دستبند</span><span class="price">۱۰۰٬۰۰۰ ت</span></div>
           </div>
+          <label class="variant-select-label">رنگ دلخواه
+            <select class="variant-select">
+              <option>سبز</option>
+              <option>بنفش</option>
+              <option>زرد</option>
+              <option>نارنجی</option>
+              <option>آبی</option>
+              <option>صورتی</option>
+              <option>قرمز</option>
+              <option>سفید</option>
+              <option>سرخابی</option>
+            </select>
+          </label>
           <button type="button" class="order-btn add-to-cart-btn">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6h15l-1.5 9h-12z"/><path d="M6 6 5 3H2"/><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/></svg>
             افزودن به سبد خرید
@@ -1346,8 +1403,27 @@
           <h3>گردنبند ساده منجوق رنگی 🌈</h3>
           <div class="cat">برندهای FGB و Miyuki · کیفیت بالا و رنگ ثابت ❄️⚡<br>رنگ‌ها: سورمه‌ای، آبی، آبی روشن، صورتی روشن، نارنجی، قرمز، زرد، سبز، سبز پسته‌ای، بنفش، صورتی، مشکی، طلایی، نقره‌ای، شیری</div>
           <div class="price-list">
-            <div class="price-row highlight"><span>قیمت</span><span class="price">۱۳۰٬۰۰۰ ت</span></div>
+            <div class="price-row highlight"><span>گردنبند</span><span class="price">۱۳۰٬۰۰۰ ت</span></div>
           </div>
+          <label class="variant-select-label">رنگ دلخواه
+            <select class="variant-select">
+              <option>سورمه‌ای</option>
+              <option>آبی</option>
+              <option>آبی روشن</option>
+              <option>صورتی روشن</option>
+              <option>نارنجی</option>
+              <option>قرمز</option>
+              <option>زرد</option>
+              <option>سبز</option>
+              <option>سبز پسته‌ای</option>
+              <option>بنفش</option>
+              <option>صورتی</option>
+              <option>مشکی</option>
+              <option>طلایی</option>
+              <option>نقره‌ای</option>
+              <option>شیری</option>
+            </select>
+          </label>
           <button type="button" class="order-btn add-to-cart-btn">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6h15l-1.5 9h-12z"/><path d="M6 6 5 3H2"/><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/></svg>
             افزودن به سبد خرید
@@ -1355,6 +1431,46 @@
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="custom-order">
+  <div class="section-head">
+    <div class="eyebrow">CUSTOM ORDER</div>
+    <h2 class="display">سفارش دلخواه بده</h2>
+    <p>دقیقاً همونی که توی ذهنته رو برامون بنویس، برات می‌سازیمش.</p>
+  </div>
+  <div class="co-box">
+    <div class="co-row">
+      <label>کد محصول مشابه <span class="co-optional">(اختیاری)</span>
+        <input type="text" id="coCode" placeholder="مثلاً کد ۰۷">
+      </label>
+      <label>رنگ مدنظر
+        <input type="text" id="coColor" placeholder="مثلاً آبی">
+      </label>
+    </div>
+    <div class="co-row">
+      <label>مدل / طرح
+        <input type="text" id="coModel" placeholder="مثلاً ستاره، صدف، قلب...">
+      </label>
+      <label>نوع و سایز
+        <select id="coSize">
+          <option value="">انتخاب کنید</option>
+          <option>گردنبند کوتاه (چوکر)</option>
+          <option>گردنبند بلند</option>
+          <option>دستبند — دور مچ دست</option>
+          <option>پابند — دور مچ پا</option>
+          <option>گوشواره</option>
+        </select>
+      </label>
+    </div>
+    <label class="co-full">توضیحات تکمیلی <span class="co-optional">(اختیاری)</span>
+      <textarea id="coNote" rows="3" placeholder="هر نکته‌ی دیگه‌ای که کمک می‌کنه دقیق‌تر بسازیمش..."></textarea>
+    </label>
+    <button type="button" class="order-btn" id="coSubmitBtn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2 11 13"/><path d="m22 2-7 20-4-9-9-4Z"/></svg>
+      ارسال درخواست دلخواه
+    </button>
   </div>
 </section>
 
@@ -1519,6 +1635,29 @@
 </div>
 
 <script>
+  // background-scroll lock for overlays (cart drawer, quick view).
+  // "overflow:hidden" alone isn't reliable on mobile Safari — touches can
+  // still scroll the page underneath. Blocking touchmove on the backdrop
+  // (while still allowing it inside the overlay's own scrollable content)
+  // prevents that without ever repositioning the page itself.
+  let __touchMoveBlocker = null;
+  function lockBodyScroll(){
+    document.body.classList.add('qv-open');
+    // block background touch-scrolling on mobile without ever repositioning
+    // the page — this is what was causing the visible jump-to-top before
+    __touchMoveBlocker = function(e){
+      if(!e.target.closest('.cart-items, .qv-content')) e.preventDefault();
+    };
+    document.addEventListener('touchmove', __touchMoveBlocker, {passive:false});
+  }
+  function unlockBodyScroll(){
+    document.body.classList.remove('qv-open');
+    if(__touchMoveBlocker){
+      document.removeEventListener('touchmove', __touchMoveBlocker);
+      __touchMoveBlocker = null;
+    }
+  }
+
   // shrink the sticky nav + category/view bars once the page scrolls,
   // so pinned controls take up minimal space while staying usable
   let scrollTicking = false;
@@ -1762,6 +1901,51 @@
   // this bypasses the browser's normal https://t.me/... request entirely,
   // which helps in regions where that domain is filtered at the network level.
   // falls back to the regular web link if the app doesn't take over.
+  // custom order box — builds a formatted request text and sends it the same
+  // way as cart checkout (native Telegram app first, web link as fallback)
+  (function initCustomOrder(){
+    const btn = document.getElementById('coSubmitBtn');
+    if(!btn) return;
+    btn.addEventListener('click', ()=>{
+      const code = document.getElementById('coCode').value.trim();
+      const color = document.getElementById('coColor').value.trim();
+      const model = document.getElementById('coModel').value.trim();
+      const size = document.getElementById('coSize').value;
+      const note = document.getElementById('coNote').value.trim();
+
+      if(!color && !model && !size && !note){
+        showToast('حداقل یه فیلد رو پر کن');
+        return;
+      }
+
+      let lines = ['درخواست سفارش دلخواه از سایت Maan:', ''];
+      if(code) lines.push(`کد محصول مشابه: ${code}`);
+      if(color) lines.push(`رنگ: ${color}`);
+      if(model) lines.push(`مدل/طرح: ${model}`);
+      if(size) lines.push(`نوع و سایز: ${size}`);
+      if(note) lines.push(`توضیحات: ${note}`);
+      const text = lines.join('\n');
+
+      const tgUrl = 'https://t.me/my_maan_shop?text=' + encodeURIComponent(text);
+      const openTelegramApp = ()=>{
+        let fellBack = false;
+        const timer = setTimeout(()=>{
+          if(!document.hidden){ fellBack = true; window.open(tgUrl, '_blank'); }
+        }, 900);
+        window.addEventListener('visibilitychange', function onHide(){
+          if(document.hidden){ clearTimeout(timer); window.removeEventListener('visibilitychange', onHide); }
+        });
+        window.location.href = 'tg://resolve?domain=my_maan_shop&text=' + encodeURIComponent(text);
+      };
+
+      if(navigator.share){
+        navigator.share({title:'سفارش دلخواه Maan', text}).catch(()=>{ openTelegramApp(); });
+      } else {
+        openTelegramApp();
+      }
+    });
+  })();
+
   (function initTelegramDeepLink(){
     const ids = ['tgSocialLink', 'tgFloatLink'];
     ids.forEach(id=>{
@@ -1841,11 +2025,11 @@
 
     function openCart(){
       cartOverlay.classList.add('active');
-      document.body.classList.add('qv-open');
+      lockBodyScroll();
     }
     function closeCart(){
       cartOverlay.classList.remove('active');
-      document.body.classList.remove('qv-open');
+      unlockBodyScroll();
     }
     cartToggle.addEventListener('click', openCart);
     cartClose.addEventListener('click', closeCart);
@@ -1866,12 +2050,16 @@
         return;
       }
 
-      cartItemsEl.innerHTML = cart.map((item, idx)=>`
+      cartItemsEl.innerHTML = cart.map((item, idx)=>{
+        const isFullSet = item.variant.includes('ست کامل');
+        const primary = isFullSet ? item.name : item.variant;
+        const secondary = isFullSet ? item.variant : '';
+        return `
         <div class="cart-item">
           <img src="${item.img || ''}" alt="${item.name}">
           <div class="cart-item-info">
-            <div class="cart-item-name">${item.name} <span class="cart-item-code">کد ${item.code}</span></div>
-            <div class="cart-item-variant">${item.variant}</div>
+            <div class="cart-item-name"><span class="cart-item-code">کد ${item.code}</span> ${primary}</div>
+            ${secondary ? `<div class="cart-item-variant">${secondary}</div>` : ''}
             <div class="cart-item-row">
               <div class="cart-qty">
                 <button type="button" data-act="dec" data-idx="${idx}">−</button>
@@ -1883,7 +2071,7 @@
             <button type="button" class="cart-item-remove" data-act="remove" data-idx="${idx}">حذف</button>
           </div>
         </div>
-      `).join('');
+      `;}).join('');
 
       const total = cart.reduce((s,i)=>s + i.price*i.qty, 0);
       cartTotalEl.textContent = formatToman(total);
@@ -2009,6 +2197,10 @@
         variant = selected.querySelector('span')?.textContent.trim() || 'استاندارد';
         priceText = selected.querySelector('.price')?.textContent.trim() || '۰ ت';
       }
+      const colorSelect = mInfo.querySelector('.variant-select');
+      if(colorSelect && colorSelect.value){
+        variant += ` — ${colorSelect.value}`;
+      }
       const container = btn.closest('.m-layout') || btn.closest('#qvInner') || mInfo.parentElement;
       const imgEl = container ? (container.querySelector('.slider img.active') || container.querySelector('.slider img')) : null;
       const img = imgEl ? imgEl.src : '';
@@ -2035,18 +2227,18 @@
       clone.querySelectorAll('.price-row').forEach(r=>{ delete r.dataset.pickerInit; });
       window.__maanInitVariantPicker(inner);
       overlay.classList.add('active');
-      document.body.classList.add('qv-open');
+      lockBodyScroll();
     }
 
     function closeModal(){
       overlay.classList.remove('active');
-      document.body.classList.remove('qv-open');
+      unlockBodyScroll();
     }
 
     // catalog grid product cards
     document.querySelectorAll('#productGrid .card-multi').forEach(card=>{
       card.addEventListener('click', (e)=>{
-        if(e.target.closest('.wish, .order-btn, .slider-dots, .slider')) return;
+        if(e.target.closest('.wish, .order-btn, .slider-dots, .slider, .variant-select, .price-row')) return;
         openWithClone(card.querySelector('.m-layout'));
       });
     });
@@ -2071,7 +2263,7 @@
             </button>
           </div>`;
         overlay.classList.add('active');
-        document.body.classList.add('qv-open');
+        lockBodyScroll();
       });
     });
 
