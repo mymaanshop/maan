@@ -414,7 +414,10 @@
   }
   .card:hover{transform:translateY(-6px); border-color:rgba(255,209,102,0.4);}
   .card{position:relative;}
-  .card.reveal{opacity:0; transform:translateY(14px);}
+  .card.reveal{
+    opacity:0; transform:translateY(24px);
+    transition:opacity .65s ease, transform .65s ease;
+  }
   .card.reveal.in-view{opacity:1; transform:translateY(0);}
   @media (prefers-reduced-motion: reduce){
     .card.reveal{opacity:1; transform:none;}
@@ -792,7 +795,7 @@
     opacity:0; pointer-events:none; transition:opacity .4s ease;
   }
   .welcome-overlay.active{opacity:1; pointer-events:auto;}
-  .welcome-overlay.faded{opacity:0.15; transition:opacity 1.6s ease;}
+  .welcome-overlay.faded{opacity:0.5; transition:opacity 1.6s ease;}
   .welcome-overlay.faded .welcome-poster{pointer-events:auto; cursor:pointer;}
   .welcome-poster{
     position:relative; overflow:hidden;
@@ -2062,7 +2065,7 @@
           observer.unobserve(entry.target);
         }
       });
-    }, {threshold:0.01, rootMargin:'0px 0px 150px 0px'});
+    }, {threshold:0.1, rootMargin:'0px 0px -20px 0px'});
     cards.forEach(c=>observer.observe(c));
   })();
 
